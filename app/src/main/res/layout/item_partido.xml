@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="#00FFFFFF">
+
+        <FrameLayout
+            android:id="@+id/idFrameTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@color/colorPrimaryDark">
+
+            <Button
+                android:id="@+id/btnInfo"
+                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+                android:layout_width="47dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:drawableLeft="@drawable/ic_info" />
+
+            <TextView
+                android:id="@+id/tvTituloPartido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="TextView"
+                android:textColor="#fff"
+                android:textSize="20dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/idFramePostulacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="175dp">
+
+            <Button
+                android:id="@+id/btnPostularme"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="#02B40D"
+                android:text="Postularme" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/idLinearDatosPartido"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="105dp"
+            android:background="#105E12"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_ubicacion"
+                    android:layout_width="39dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    tools:srcCompat="@tools:sample/avatars[8]" />
+
+                <TextView
+                    android:id="@+id/tv_ubicacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:background="#6F8071"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_hora"
+                    android:layout_width="39dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    tools:srcCompat="@tools:sample/avatars[8]" />
+
+                <TextView
+                    android:id="@+id/tv_hora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:background="#6F8071"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_disciplina"
+                    android:layout_width="39dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    tools:srcCompat="@tools:sample/avatars[8]" />
+
+                <TextView
+                    android:id="@+id/tv_disciplina"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:background="#6F8071"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_faltan"
+                    android:layout_width="39dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    tools:srcCompat="@tools:sample/avatars[8]" />
+
+                <TextView
+                    android:id="@+id/tv_faltan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Faltan"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="364dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="220dp"
+            android:background="#A3C3C5C3"
+            android:orientation="horizontal"></LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/idRelativePerfil"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="35dp"
+            android:background="@color/colorPrimary"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/ivCalendario"
+                android:layout_width="40dp"
+                android:layout_height="44dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="21dp"
+                tools:srcCompat="@tools:sample/avatars[3]" />
+
+            <ImageView
+                android:id="@+id/ivPerfilPartido"
+                android:layout_width="56dp"
+                android:layout_height="54dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="11dp"
+                tools:srcCompat="@tools:sample/avatars[0]" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"
+                android:layout_alignStart="@+id/ivPerfilPartido"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="54dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="0dp"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/tvPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="#fff"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/tvTipoPartido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="TextView"
+                    android:textColor="#fff"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
