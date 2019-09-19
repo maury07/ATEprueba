@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.ateprueba.Models.PartidoModelo;
 import com.example.ateprueba.R;
@@ -22,19 +24,22 @@ public class PartidoFragment extends Fragment {
     RecyclerView recyclerViewPartido;
     RecyclerViewAdaptadorPartido adaptadorPartido;
     private FloatingActionButton fab;
+    Button postularse;
+    List<PartidoModelo> lista;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_partido, container, false);
+        final View view = inflater.inflate(R.layout.fragment_partido, container, false);
 
         recyclerViewPartido = (RecyclerView)view.findViewById(R.id.recyclerPartido);
         recyclerViewPartido.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adaptadorPartido = new RecyclerViewAdaptadorPartido(obtenerPartidos());
-        recyclerViewPartido.setAdapter(adaptadorPartido);
+        lista = obtenerPartidos();
 
+        adaptadorPartido = new RecyclerViewAdaptadorPartido(lista);
+        recyclerViewPartido.setAdapter(adaptadorPartido);
 
         return view;
     }

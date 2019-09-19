@@ -1,10 +1,13 @@
 package com.example.ateprueba.Adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,12 +19,16 @@ import java.util.List;
 
 public class RecyclerViewAdaptadorPartido extends RecyclerView.Adapter<RecyclerViewAdaptadorPartido.ViewHolder> {
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView tituloPartido, nombrePerfil, tipoPartido, ubicacion, hora, disciplina;
         ImageView imgPerfilPartido, imgDiaCalendario, imgUbicacion, imgHora, imgDisciplina, imgFaltan;
+        Button postularse, informacion;
+        Context context;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            context = itemView.getContext();
             tituloPartido = (TextView)itemView.findViewById(R.id.tvTituloPartido);
             nombrePerfil = (TextView)itemView.findViewById(R.id.tvPerfil);
             tipoPartido = (TextView)itemView.findViewById(R.id.tvTipoPartido);
@@ -34,7 +41,27 @@ public class RecyclerViewAdaptadorPartido extends RecyclerView.Adapter<RecyclerV
             ubicacion = (TextView)itemView.findViewById(R.id.tv_ubicacion);
             hora = (TextView)itemView.findViewById(R.id.tv_hora);
             disciplina = (TextView)itemView.findViewById(R.id.tv_disciplina);
+            postularse = (Button)itemView.findViewById(R.id.btnPostularme);
+            informacion = (Button)itemView.findViewById(R.id.btnInfo);
+        }
 
+        public void setOnClickListeners() {
+            postularse.setOnClickListener(this);
+            informacion.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.btnPostularme:
+                    Toast.makeText(v.getContext(), "Postularme",Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.btnInfo:
+                    Toast.makeText(v.getContext(), "Partido en "+ubicacion.getText()+ ", a las "+hora.getText(),Toast.LENGTH_SHORT).show();
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + v.getId());
+            }
         }
     }
 
@@ -49,6 +76,7 @@ public class RecyclerViewAdaptadorPartido extends RecyclerView.Adapter<RecyclerV
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_partido,parent,false);
         ViewHolder viewHolder = new ViewHolder(view);
+
         return viewHolder;
     }
 
@@ -66,12 +94,14 @@ public class RecyclerViewAdaptadorPartido extends RecyclerView.Adapter<RecyclerV
         holder.ubicacion.setText(listaPartido.get(position).getUbicacion());
         holder.hora.setText(listaPartido.get(position).getHora());
         holder.disciplina.setText(listaPartido.get(position).getDisciplina());
+
+        //eventos
+        holder.setOnClickListeners();
     }
-
-
 
     @Override
     public int getItemCount() {
         return listaPartido.size();
     }
+
 }
