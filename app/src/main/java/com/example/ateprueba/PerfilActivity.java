@@ -29,6 +29,8 @@ public class PerfilActivity extends AppCompatActivity {
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String nombre = etNombre.getText().toString();
+                Toast.makeText(PerfilActivity.this, "Bienvenido "+nombre, Toast.LENGTH_SHORT).show();
                 Toast.makeText(PerfilActivity.this, "Tus datos han sido guardados correctamente", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(getApplicationContext(), TabbedActivity.class);
                 startActivity(i);

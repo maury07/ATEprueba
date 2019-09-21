@@ -43,19 +43,20 @@ public class NoticiasFragment extends Fragment {
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(),"qui si io ", Toast.LENGTH_SHORT).show();
+                adapterNoticias= new RecyclerViewAdapterNoticias(actualizarEstados(estado.getText().toString()));
+                recyclerEstados.setAdapter(adapterNoticias);
             }
         });
-        adapterNoticias = new RecyclerViewAdapterNoticias(actualizarEstados());
-        recyclerEstados.setAdapter(adapterNoticias);
+        //adapterNoticias = new RecyclerViewAdapterNoticias(actualizarEstados());
+        //recyclerEstados.setAdapter(adapterNoticias);
 
         return view;
     }
 
-    public List<EstadoModelo> actualizarEstados(){
+    public List<EstadoModelo> actualizarEstados(String texto){
         List<EstadoModelo> lista = new ArrayList<>();
-        lista.add(new EstadoModelo("Damian Villarreal", "7:17 PM", "este es un estadop de prueba", R.drawable.user1));
-        lista.add(new EstadoModelo("Mauri nuñez", "7:56 PM", "otro estado de prueba", R.drawable.user1));
+        lista.add(new EstadoModelo("Damian Villarreal", "7:17 PM", texto, R.drawable.user1));
+        //lista.add(new EstadoModelo("Mauri nuñez", "7:56 PM", "otro estado de prueba", R.drawable.user1));
         return lista;
     }
 

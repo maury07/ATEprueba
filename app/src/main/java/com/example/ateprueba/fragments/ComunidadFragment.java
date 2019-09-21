@@ -47,8 +47,8 @@ public class ComunidadFragment extends Fragment {
 
     public List<ComunidadModelo> obtenerChats(){
         List<ComunidadModelo> chats = new ArrayList<>();
-        chats.add(new ComunidadModelo("Partido de los martes", "Este martes a las 16:00hs todos a la cancha", R.drawable.users));
-        chats.add(new ComunidadModelo("Damian Villarreal", "Queres jugar un partido hoy?",R.drawable.pelado1));
+        chats.add(new ComunidadModelo("Equipo de la Universidad", "Jugamos este martes, a las 20hs", R.drawable.users));
+        //chats.add(new ComunidadModelo("Damian Villarreal", "Queres jugar un partido hoy?",R.drawable.pelado1));
 
         return chats;
     }

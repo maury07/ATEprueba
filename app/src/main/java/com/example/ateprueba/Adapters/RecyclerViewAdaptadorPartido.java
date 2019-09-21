@@ -1,6 +1,8 @@
 package com.example.ateprueba.Adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,10 +53,21 @@ public class RecyclerViewAdaptadorPartido extends RecyclerView.Adapter<RecyclerV
         }
 
         @Override
-        public void onClick(View v) {
+        public void onClick(final View v) {
             switch (v.getId()){
                 case R.id.btnPostularme:
-                    Toast.makeText(v.getContext(), "Postularme",Toast.LENGTH_SHORT).show();
+                    new AlertDialog.Builder(context)
+                            .setTitle("Postulacion")
+                            .setMessage("Esta seguro que quiere postularse para este partido?")
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Toast.makeText(v.getContext(),"Su postulacion ha sido enviada",Toast.LENGTH_SHORT).show();
+                                }
+                            })
+
+                            .setNegativeButton(android.R.string.no, null)
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
                     break;
                 case R.id.btnInfo:
                     Toast.makeText(v.getContext(), "Partido en "+ubicacion.getText()+ ", a las "+hora.getText(),Toast.LENGTH_SHORT).show();
