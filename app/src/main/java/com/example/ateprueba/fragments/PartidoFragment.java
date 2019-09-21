@@ -55,6 +55,7 @@ public class PartidoFragment extends Fragment {
         partido.add(new PartidoModelo("Partido tranqui", "Matias colorado", "Futbol Masculino", R.drawable.mati1,
                 R.drawable.veintinueve, R.drawable.ic_location, R.drawable.hour, R.drawable.futbol2, R.drawable.number5,  "Los Olivos", "23:00 hs", "Futbol"));
 
+
         return partido;
     }
 
